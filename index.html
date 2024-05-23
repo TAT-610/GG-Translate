@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Translate Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="ggtranslate">
+    <div class="header">
+        <nav>
+            <ul class="ml">
+                <li> <img class="menu" src="icons/menu.png"/></li>
+                <li class="logo"><img class="logoimg" src="icons/logo.png"> Translate</li>
+            </ul>
+            <ul class="infor">
+                <li><img class="setting" src="icons/setting.png"/></li>
+                <li><img class="setting" src="icons/app.png"/></li>
+                <li><img class="account" src="icons/user.png"/></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="category">
+            <ul class="list-category">
+                <li class="item-category" onclick="openTab('tab1')"><img  src="icons/languages.png"/>Text</li>
+                <li class="item-category" onclick="openTab('tab2')"><img  src="icons/image.png"/>Images</li>
+                <li class="item-category" onclick="openTab('tab3')"><img  src="icons/file.png"/>Documents</li>
+                <li class="item-category" onclick="openTab('tab4')"><img  src="icons/web.png"/>Websites</li>
+            </ul>
+        </div>
+        <div class="content">
+           
+            
+            <div id="tab1" class="tabcontent">
+                <div class="header-tab">
+                    <div class="header-tab1">
+                    <button class="select-language">Detect language</button>
+                    <button class="select-languageEn">English</button>
+                    <button class="select-languageVn">VietNamese</button>
+                    <button class="select-language">Spanich</button>
+                    <button  class="selectoption"><img class="setting" src="icons/select.png"/></button>
+                    </div>
+                    <div class="header-tab2" >
+                    <div>
+                    <button class="swap" onclick="swapContent()"><img class="setting" src="icons/swap.png"/></button>
+                    </div>
+                    <div>
+                    <button class="select-language">English</button>
+                    <button class="select-language">VietNamese</button>
+                    <button class="select-language">Spanich</button>
+                    <button class="selectoption"><img class="setting" src="icons/select.png"/></button>
+                    </div>
+
+                </div></div>
+                <div class="box">
+                    <div class="box1">
+                        <textarea class="boxtext1" type="text" id="text" name="text" oninput="translateText()"></textarea>
+                        <img class="mic" src="icons/mic.png"/>
+                        
+
+                    </div>
+                    <div class="box2">
+                        <textarea class="boxtext2" type="text-translate" id="text-translate" name="text-translate" placeholder="Translation" disabled></textarea>
+                        <button class="copy" onclick="copyText()"><img class="setting" src="icons/copy.png"/></button>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            <div id="tab2" class="tabcontent">
+                <div class="header-tab">
+                    <div class="header-tab1">
+                    <button class="select-language ">Detect language</button>
+                    <button class="select-language">English</button>
+                    <button class="select-language">VietNamese</button>
+                    <button class="select-language">Spanich</button>
+                    <button  class="selectoption"><img class="setting" src="icons/select.png"/></button>
+                    </div>
+                    <div class="header-tab2" >
+                    <div>
+                    <button class="swap" onclick="swapContent()"><img class="setting" src="icons/swap.png"/></button>
+                    </div>
+                    <div>
+                    <button class="select-language">English</button>
+                    <button class="select-language">VietNamese</button>
+                    <button class="select-language">Spanich</button>
+                    <button class="selectoption"><img class="setting" src="icons/select.png"/></button>
+                    </div>
+
+                </div></div>
+                <div class="box-image">
+                    <div class="clound">
+                        <img src="icons/up.png"/>
+                        <div class="drag">Drag and drop</div>
+
+                    </div>
+                    <div class="up-image">
+                        <div><span>Or choose a file</span></div>
+                        <div><button class="browse-img">Browse your files</button></div>
+                        <div><button class="paste-img">Paste from board</button></div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- tab3 -->
+            <div id="tab3" class="tabcontent">
+                <div class="header-tab">
+                    <div class="header-tab1">
+                    <button class="select-language">Detect language</button>
+                    <button class="select-language">English</button>
+                    <button class="select-language">VietNamese</button>
+                    <button class="select-language">Spanich</button>
+                    <button  class="selectoption"><img class="setting" src="icons/select.png"/></button>
+                    </div>
+                    <div class="header-tab2" >
+                    <div>
+                    <button class="swap" onclick="swapContent()"><img class="setting" src="icons/swap.png"/></button>
+                    </div>
+                    <div>
+                    <button class="select-language">English</button>
+                    <button class="select-language">VietNamese</button>
+                    <button class="select-language">Spanich</button>
+                    <button class="selectoption"><img class="setting" src="icons/select.png"/></button>
+                    </div>
+
+                </div></div>
+                <div class="box-image">
+                    <div class="clound">
+                        <img src="icons/up.png"/>
+                        <div class="drag">Drag and drop</div>
+
+                    </div>
+                    <div class="up-image">
+                        <div><span>Or choose a file</span></div>
+                        <div><button class="browse-img">Browse your files</button></div>
+                        <div><button class="paste-img">Paste from board</button></div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="tab4" class="tabcontent">
+                <div class="header-tab">
+                    <div class="header-tab1">
+                    <button class="select-language">Detect language</button>
+                    <button class="select-language">English</button>
+                    <button class="select-language">VietNamese</button>
+                    <button class="select-language">Spanich</button>
+                    <button  class="selectoption"><img class="setting" src="icons/select.png"/></button>
+                    </div>
+                    <div class="header-tab2" >
+                    <div>
+                    <button class="swap" onclick="swapContent()"><img class="setting" src="icons/swap.png"/></button>
+                    </div>
+                    <div>
+                    <button class="select-language">English</button>
+                    <button class="select-language">VietNamese</button>
+                    <button class="select-language">Spanich</button>
+                    <button class="selectoption"><img class="setting" src="icons/select.png"/></button>
+                    </div>
+
+                </div></div>
+                <div class="box-url">
+                    <input class="input-url" type="url" placeholder="Enter URL" >
+
+                </div>
+            </div>
+            <div class="feedback">Send feedback</div>
+            <!-- <button  onclick="swapContent()">Swap Content</button> -->
+        </div>
+        <div class="extend">
+            <div class="extend-item">
+                <img class="icons-extend" src="icons/history.png"/>
+                <p>History</p>
+
+            </div>
+            <div class="extend-item">
+                <img class="icons-extend" src="icons/save.png"/>
+                <p>Saved</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+        
